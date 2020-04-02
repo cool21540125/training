@@ -1,20 +1,18 @@
----
 kind: pipeline
 name: default
 
 steps:
   - name: backend
     image: golang:1.13-alpine
-    environment:
-      USERNAME:
-        from_secret: username
+#     environment:
+#       USERNAME:
+#         from_secret: username
     commands:
       - go build
       - go test
-      - echo $USERNAME
-      - echo $USERNAME > a.txt
+      - echo 'Hello~~'
+      - echo 'Go to sleep' > a.txt
       - cat a.txt
-      - echo test
 
 
 # workspace:
